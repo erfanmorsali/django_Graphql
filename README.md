@@ -6,7 +6,7 @@ GraphQL is designed to make APIs fast, flexible, and developer-friendly. It can 
 
 Additionally, GraphQL gives API maintainers the flexibility to add or deprecate fields without impacting existing queries. Developers can build APIs with whatever methods they prefer, and the GraphQL specification will ensure they function in predictable ways to clients.
 
-I Developed a Simple Django Application Using graphene To Make Some simple Apis And Secure Them Using JWT. Also I Used a Third-party Library(django-graphene-permissions) To Check Permissions But i didnt Use Complex Permissions.Just Made Simple Permissions To Show How They Works.
+I Developed a Simple Django Application Using graphene To Make Some simple Apis And Secure Them with JWT Using (Django GraphQL JWT). Also I Used a Third-party Library(django-graphene-permissions) To Check Permissions But i didnt Use Complex Permissions.Just Made Simple Permissions To Show How They Works.
 You Can Use Your Own Permission Handler.
 
 ## Installation
