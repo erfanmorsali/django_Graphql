@@ -18,10 +18,7 @@ class CreateComment(graphene.Mutation):
     def mutate(self, info, input=None):
         comment = Comment.objects.create(message=input.message)
         if input.posts:
-            posts = []
-            for post_id in input.posts:
-                post = Post.objects.get(id=post_id)
-                posts.append(post)
+            posts = Post.objects.filter(id__in=input.posts)
             comment.post.set(posts)
         ok = True
         return CreateComment(ok=ok, comment=comment)
@@ -40,11 +37,8 @@ class UpdateComment(graphene.Mutation):
         comment = Comment.objects.get(id=pk)
         comment.message = input.message
         if input.posts:
-            post_list = []
-            for post_id in input.posts:
-                post = Post.objects.get(id=post_id)
-                post_list.append(post)
-            comment.post.set(post_list)
+            posts = Post.objects.filter(id__in=input.posts)
+            comment.post.set(posts)
         comment.save()
         ok = True
         return UpdateComment(ok=ok, comment=comment)
